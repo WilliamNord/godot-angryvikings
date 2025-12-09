@@ -1,0 +1,13 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cscmy4um1mwfa"]
+
+[resource]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.7
+direction = Vector3(0, -1, 0)
+spread = 25.0
+initial_velocity_min = 83.33
+initial_velocity_max = 150.0
+gravity = Vector3(0, 98, 0)
+scale_min = 10.0
+scale_max = 20.0
+color = Color(0, 0, 1, 1)

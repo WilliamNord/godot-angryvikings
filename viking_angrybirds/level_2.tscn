@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://wmivgv550p"]
+
+[ext_resource type="PackedScene" uid="uid://cyaxe67ynf3ec" path="res://plank.tscn" id="1_1y8me"]
+[ext_resource type="PackedScene" uid="uid://dn4drwkblvgav" path="res://sheep.tscn" id="2_n7ypv"]
+[ext_resource type="PackedScene" uid="uid://bwavjsggcx051" path="res://stone.tscn" id="3_0s5r2"]
+[ext_resource type="PackedScene" uid="uid://cil3j0yipydu7" path="res://ground.tscn" id="4_7j8ne"]
+
+[node name="level_2" type="Node2D"]
+
+[node name="house group" type="Node" parent="."]
+
+[node name="house1" type="Node" parent="house group"]
+
+[node name="plank" parent="house group/house1" instance=ExtResource("1_1y8me")]
+position = Vector2(1059, 765)
+rotation = 1.5708
+
+[node name="sheep" parent="house group/house1" instance=ExtResource("2_n7ypv")]
+position = Vector2(1055, 718)
+
+[node name="stone" parent="house group/house1" instance=ExtResource("3_0s5r2")]
+position = Vector2(1008, 817)
+
+[node name="plank3" parent="house group/house1" instance=ExtResource("1_1y8me")]
+position = Vector2(1074, 815)
+
+[node name="plank4" parent="house group/house1" instance=ExtResource("1_1y8me")]
+position = Vector2(1009, 735)
+
+[node name="house2" type="Node" parent="house group"]
+
+[node name="plank2" parent="house group/house2" instance=ExtResource("1_1y8me")]
+position = Vector2(1481, 814)
+
+[node name="plank3" parent="house group/house2" instance=ExtResource("1_1y8me")]
+position = Vector2(1373, 814)
+
+[node name="plank4" parent="house group/house2" instance=ExtResource("1_1y8me")]
+position = Vector2(1461, 740)
+rotation = 2.57009
+
+[node name="plank6" parent="house group/house2" instance=ExtResource("1_1y8me")]
+position = Vector2(1398, 736)
+rotation = 0.663877
+
+[node name="sheep" parent="house group/house2" instance=ExtResource("2_n7ypv")]
+position = Vector2(1425, 796)
+
+[node name="stone" parent="house group/house2" instance=ExtResource("3_0s5r2")]
+position = Vector2(1428, 842)
+rotation = 1.5708
+
+[node name="ground" parent="." instance=ExtResource("4_7j8ne")]
+position = Vector2(1219, 875)
+scale = Vector2(3, 1)

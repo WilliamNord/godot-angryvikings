@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://xm31ljy46ry4"]
+
+[ext_resource type="Script" uid="uid://bcpbcqxkdmk45" path="res://axe.gd" id="1_7dw2v"]
+[ext_resource type="Texture2D" uid="uid://dobhign02tbnj" path="res://viking øks 2.png" id="2_5mfl6"]
+[ext_resource type="Material" uid="uid://cscmy4um1mwfa" path="res://confetti_blue.tres" id="3_5mfl6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7dw2v"]
+radius = 83.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5mfl6"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, -1, 0)
+spread = 25.0
+initial_velocity_min = 83.33
+initial_velocity_max = 150.0
+gravity = Vector3(0, 98, 0)
+scale_min = 3.0
+scale_max = 10.0
+color = Color(0.365897, 0.562772, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ed3of"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, -1, 0)
+spread = 25.0
+initial_velocity_min = 83.33
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_min = 3.0
+scale_max = 10.0
+color = Color(0.845238, 0.897396, 1, 1)
+
+[node name="axe" type="RigidBody2D"]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 100
+script = ExtResource("1_7dw2v")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(17, -16)
+scale = Vector2(1.21289, 1.21289)
+texture = ExtResource("2_5mfl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_7dw2v")
+
+[node name="splash_particles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+local_coords = true
+process_material = ExtResource("3_5mfl6")
+
+[node name="splash_particles2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_5mfl6")
+
+[node name="splash_particles3" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ed3of")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

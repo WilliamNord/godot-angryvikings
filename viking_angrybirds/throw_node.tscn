@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuhjefkgnmjyb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a0ss4"]
+
+[node name="Throw node" type="Node2D"]
+z_index = 10
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(3.8147e-06, 7.62939e-06)
+scale = Vector2(89.6009, 89.6009)
+mesh = SubResource("SphereMesh_a0ss4")

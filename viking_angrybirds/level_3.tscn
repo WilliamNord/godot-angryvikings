@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgdgalnd5l8cx"]
+
+[ext_resource type="PackedScene" uid="uid://cyaxe67ynf3ec" path="res://plank.tscn" id="1_j8bo8"]
+[ext_resource type="PackedScene" uid="uid://dn4drwkblvgav" path="res://sheep.tscn" id="2_1jdk1"]
+[ext_resource type="PackedScene" uid="uid://bwavjsggcx051" path="res://stone.tscn" id="3_6p2dc"]
+[ext_resource type="PackedScene" uid="uid://cil3j0yipydu7" path="res://ground.tscn" id="4_fmu3g"]
+
+[node name="level_3" type="Node2D"]
+
+[node name="house group" type="Node" parent="."]
+
+[node name="house1" type="Node" parent="house group"]
+
+[node name="plank" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1149, 680)
+rotation = 1.5708
+
+[node name="plank2" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1112, 733)
+
+[node name="sheep" parent="house group/house1" instance=ExtResource("2_1jdk1")]
+position = Vector2(1066, 795)
+
+[node name="stone2" parent="house group/house1" instance=ExtResource("3_6p2dc")]
+position = Vector2(1070, 843)
+rotation = 1.5708
+
+[node name="plank3" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1120, 813)
+
+[node name="plank4" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1068, 681)
+rotation = 1.5708
+
+[node name="plank5" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1024, 732)
+
+[node name="plank6" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1017, 813)
+
+[node name="plank7" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1150, 581)
+rotation = 1.5708
+
+[node name="plank8" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1180, 630)
+
+[node name="plank9" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1117, 630)
+
+[node name="sheep2" parent="house group/house1" instance=ExtResource("2_1jdk1")]
+position = Vector2(1143, 533)
+
+[node name="plank10" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1276, 733)
+
+[node name="sheep3" parent="house group/house1" instance=ExtResource("2_1jdk1")]
+position = Vector2(1230, 795)
+
+[node name="stone4" parent="house group/house1" instance=ExtResource("3_6p2dc")]
+position = Vector2(1234, 843)
+rotation = 1.5708
+
+[node name="plank11" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1284, 813)
+
+[node name="plank12" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1232, 681)
+rotation = 1.5708
+
+[node name="plank13" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1188, 732)
+
+[node name="plank14" parent="house group/house1" instance=ExtResource("1_j8bo8")]
+position = Vector2(1181, 813)
+
+[node name="ground" parent="." instance=ExtResource("4_fmu3g")]
+position = Vector2(1219, 875)
+scale = Vector2(3, 1)

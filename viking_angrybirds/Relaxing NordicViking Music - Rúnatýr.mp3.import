@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxypcp1nmgqox"
+path="res://.godot/imported/Relaxing NordicViking Music - Rúnatýr.mp3-0fe07e2a16019071772c1af49659315a.mp3str"
+
+[deps]
+
+source_file="res://Relaxing NordicViking Music - Rúnatýr.mp3"
+dest_files=["res://.godot/imported/Relaxing NordicViking Music - Rúnatýr.mp3-0fe07e2a16019071772c1af49659315a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

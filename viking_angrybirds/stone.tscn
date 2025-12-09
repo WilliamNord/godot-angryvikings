@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwavjsggcx051"]
+
+[ext_resource type="Texture2D" uid="uid://bj0vbd0gl7jrn" path="res://stone_wall.png" id="1_6s6ed"]
+[ext_resource type="Script" uid="uid://dyyht4yha244v" path="res://stone.gd" id="1_rq0vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq0vd"]
+size = Vector2(42, 160)
+
+[node name="stone" type="RigidBody2D"]
+mass = 5.0
+contact_monitor = true
+max_contacts_reported = 100
+script = ExtResource("1_rq0vd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["breakable"]]
+position = Vector2(1.5, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_rq0vd")
+
+[node name="StoneWall" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6s6ed")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

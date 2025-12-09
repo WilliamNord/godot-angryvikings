@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfoxds6eqjm72"]
+
+[ext_resource type="Material" uid="uid://c0fdck4fdnpmb" path="res://confetti_red.tres" id="1_ilyld"]
+[ext_resource type="Material" uid="uid://cscmy4um1mwfa" path="res://confetti_blue.tres" id="2_smimb"]
+[ext_resource type="Material" uid="uid://g618bi8l51j" path="res://confetti_yellow.tres" id="3_ovyj8"]
+
+[node name="confetti" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = ExtResource("1_ilyld")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 2.0
+process_material = ExtResource("2_smimb")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 2.0
+process_material = ExtResource("3_ovyj8")

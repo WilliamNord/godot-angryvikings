@@ -1,0 +1,223 @@
+[gd_scene load_steps=18 format=3 uid="uid://cp431lvoyniph"]
+
+[ext_resource type="PackedScene" uid="uid://xm31ljy46ry4" path="res://axe.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://cwd7buyhaesgh" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://cuhjefkgnmjyb" path="res://throw_node.tscn" id="2_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://bi527ty6rve6d" path="res://background.png" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://cil3j0yipydu7" path="res://ground.tscn" id="9_ioo17"]
+[ext_resource type="Texture2D" uid="uid://dhc213p8y0xe7" path="res://viking.png" id="10_ic0uy"]
+[ext_resource type="AudioStream" uid="uid://c6scli248nogy" path="res://Viking.mp3" id="10_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://87lecn8gbmi2" path="res://water.tscn" id="10_wse8f"]
+[ext_resource type="FontFile" uid="uid://vmujjr5auh2y" path="res://MgfKronkeldPersonalUse-nAME4.otf" id="11_2u3nc"]
+[ext_resource type="Texture2D" uid="uid://6k26v1sl16ax" path="res://viking_arm.png" id="11_ic0uy"]
+[ext_resource type="Texture2D" uid="uid://dulcfucdtqyqk" path="res://viking båt ferdig.png" id="11_k3n1d"]
+[ext_resource type="Material" uid="uid://c0fdck4fdnpmb" path="res://confetti_red.tres" id="12_70uel"]
+[ext_resource type="PackedScene" uid="uid://bnnwvbw1rb8mq" path="res://splash.tscn" id="12_k3n1d"]
+[ext_resource type="Material" uid="uid://cscmy4um1mwfa" path="res://confetti_blue.tres" id="13_hiqwa"]
+[ext_resource type="Material" uid="uid://g618bi8l51j" path="res://confetti_yellow.tres" id="14_2u3nc"]
+[ext_resource type="Texture2D" uid="uid://cgv6r4vssbtx6" path="res://viking boat 2.png" id="15_hiqwa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ic0uy"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_tlwt5")
+
+[node name="axe" parent="." instance=ExtResource("1_f3sb7")]
+position = Vector2(277, 223)
+
+[node name="start pos" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(463.8, 693.3)
+scale = Vector2(0.5, 0.5)
+
+[node name="Throw" parent="." instance=ExtResource("2_fj7yv")]
+modulate = Color(0, 1, 0, 0.160784)
+position = Vector2(188, 520)
+scale = Vector2(0.5, 0.5)
+
+[node name="Throw3" parent="." instance=ExtResource("2_fj7yv")]
+modulate = Color(0, 1, 0, 0.160784)
+position = Vector2(102, 451)
+scale = Vector2(0.167, 0.167)
+
+[node name="Throw2" parent="." instance=ExtResource("2_fj7yv")]
+modulate = Color(0, 1, 0, 0.160784)
+position = Vector2(135, 488)
+scale = Vector2(0.25, 0.25)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="house group" type="Node" parent="."]
+
+[node name="house1" type="Node" parent="house group"]
+
+[node name="house2" type="Node" parent="house group"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(800, 450)
+scale = Vector2(1.38889, 1.92308)
+texture = ExtResource("7_pkg7o")
+metadata/_edit_lock_ = true
+
+[node name="level_spawn" type="Node2D" parent="."]
+position = Vector2(1238, 836)
+
+[node name="ground" parent="." instance=ExtResource("9_ioo17")]
+position = Vector2(1348, 874)
+scale = Vector2(3, 1)
+
+[node name="ground2" parent="." instance=ExtResource("9_ioo17")]
+position = Vector2(1769, 511)
+rotation = 1.5708
+scale = Vector2(9, 1)
+
+[node name="water" parent="." instance=ExtResource("10_wse8f")]
+z_index = -80
+position = Vector2(503, 749)
+
+[node name="Viking" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(532.8, 739.3)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_ic0uy")
+
+[node name="Viking_arm" type="Sprite2D" parent="Viking"]
+z_index = 1
+position = Vector2(-257.5, -37.5)
+rotation = -1.5708
+scale = Vector2(1.08028, 0.865939)
+texture = ExtResource("11_ic0uy")
+
+[node name="splash" parent="." instance=ExtResource("12_k3n1d")]
+position = Vector2(676, 577)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_k3n1d")
+volume_db = 4.974
+autoplay = true
+parameters/looping = true
+
+[node name="new_level_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 72.0
+offset_right = 226.0
+offset_bottom = 224.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_2u3nc")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ic0uy")
+text = "LEVEL ?"
+placeholder_text = "ummm, idk, ur problem"
+
+[node name="TextEdit2" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -799.0
+offset_top = 3.0
+offset_right = -189.0
+offset_bottom = 253.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ic0uy")
+text = "\"R\" restart
+\"E\" get back axe
+\"1\" - \"2\" - \"3\" switch level"
+placeholder_text = "ummm, idk, ur problem"
+
+[node name="TextEdit3" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 178.0
+offset_top = 211.0
+offset_right = 788.0
+offset_bottom = 461.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ic0uy")
+text = "Sheep die when they hit the ground"
+placeholder_text = "ummm, idk, ur problem"
+wrap_mode = 1
+
+[node name="confetti" type="Node2D" parent="."]
+position = Vector2(772, 214)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="confetti"]
+emitting = false
+amount = 10
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = ExtResource("12_70uel")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="confetti"]
+emitting = false
+amount = 10
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+process_material = ExtResource("13_hiqwa")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="confetti"]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 2.0
+process_material = ExtResource("14_2u3nc")
+
+[node name="VikingBåtFerdig3" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(1145, 678)
+scale = Vector2(0.299799, 0.299799)
+texture = ExtResource("11_k3n1d")
+
+[node name="VikingBåtFerdig4" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(1217, 732)
+scale = Vector2(0.299799, 0.299799)
+texture = ExtResource("11_k3n1d")
+
+[node name="VikingBåtFerdig5" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(497, 684)
+scale = Vector2(0.299799, 0.299799)
+texture = ExtResource("11_k3n1d")
+
+[node name="VikingBåtFerdig6" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(108, 671)
+scale = Vector2(0.299799, 0.299799)
+texture = ExtResource("11_k3n1d")
+
+[node name="VikingBoat2" type="Sprite2D" parent="."]
+position = Vector2(240, 713)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("15_hiqwa")
+
+[node name="VikingBoat4" type="Sprite2D" parent="."]
+position = Vector2(709, 656)
+scale = Vector2(0.441406, 0.453125)
+texture = ExtResource("15_hiqwa")
+
+[node name="VikingBoat3" type="Sprite2D" parent="."]
+position = Vector2(892, 717)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("15_hiqwa")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

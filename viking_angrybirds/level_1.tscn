@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://heiopp6ieqto"]
+
+[ext_resource type="PackedScene" uid="uid://cyaxe67ynf3ec" path="res://plank.tscn" id="1_hbghi"]
+[ext_resource type="Script" uid="uid://cpmge4otcwny1" path="res://level_1.gd" id="1_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://cil3j0yipydu7" path="res://ground.tscn" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://bwavjsggcx051" path="res://stone.tscn" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://dn4drwkblvgav" path="res://sheep.tscn" id="3_hn12h"]
+
+[node name="level_1" type="Node2D"]
+script = ExtResource("1_ihfcg")
+
+[node name="house group" type="Node" parent="."]
+
+[node name="house1" type="Node" parent="house group"]
+
+[node name="plank" parent="house group/house1" instance=ExtResource("1_hbghi")]
+position = Vector2(1143, 761)
+rotation = 1.5708
+
+[node name="plank2" parent="house group/house1" instance=ExtResource("1_hbghi")]
+position = Vector2(1182, 811)
+
+[node name="sheep" parent="house group/house1" instance=ExtResource("3_hn12h")]
+position = Vector2(1133, 715)
+
+[node name="stone" parent="house group/house1" instance=ExtResource("2_hn12h")]
+position = Vector2(1101, 812)
+
+[node name="house2" type="Node" parent="house group"]
+
+[node name="plank" parent="house group/house2" instance=ExtResource("1_hbghi")]
+position = Vector2(1390, 758)
+rotation = 1.5708
+
+[node name="plank2" parent="house group/house2" instance=ExtResource("1_hbghi")]
+position = Vector2(1417, 809)
+
+[node name="plank3" parent="house group/house2" instance=ExtResource("1_hbghi")]
+position = Vector2(1358, 810)
+
+[node name="plank4" parent="house group/house2" instance=ExtResource("1_hbghi")]
+position = Vector2(1386, 656)
+rotation = 1.5708
+
+[node name="plank5" parent="house group/house2" instance=ExtResource("1_hbghi")]
+position = Vector2(1417, 707)
+
+[node name="plank6" parent="house group/house2" instance=ExtResource("1_hbghi")]
+position = Vector2(1354, 706)
+
+[node name="sheep" parent="house group/house2" instance=ExtResource("3_hn12h")]
+position = Vector2(1375, 609)
+
+[node name="ground" parent="." instance=ExtResource("2_hbghi")]
+position = Vector2(1219, 875)
+scale = Vector2(3, 1)
